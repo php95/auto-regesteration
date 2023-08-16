@@ -1,0 +1,34 @@
+$color-primary-purple: #635CA8;
+$color-primary-grey: #38383880;
+$color-primary-white: #ffffff;
+$color-primary-light-grey: #F5F6F9;
+
+
+// Monochrome colours
+$color-monochrome-red-violet: #B4ACE5;
+$color-monochrome-semi-violet: #B7BEC9;
+$color-monochrome-light-violet: #D0D5DE;
+$color-monochrome-metallic-seaweed: #3482F4;
+$color-monochrome-phlox: #747A88;
+$color-monochrome-trypan-blue: #454C66;
+$color-monochrome-turquoise: #6AC7BB;
+$color-monochrome-black: #000000;
+$color-monochrome-aluminium: #DDDDE014;
+$color-monochrome-light-grey: #6959CB00;
+$color-monochrome-lighter-grey: #635CA81A;
+$color-monochrome-transparent: transparent;
+
+// Shortcut colours
+$color-white: $color-primary-white;
+$color-black: $color-monochrome-black;
+$color-transparent: $color-monochrome-transparent;
+
+// Dark colours
+$color-dark: #14141e;
+$color-dark-semi: #2d343b;
+
+// Dynamic vars for colors
+$main-color: $color-primary-purple;
+$secondary-color: $color-primary-grey;
+
+
