@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-{
-path: 'admin',
-// loadChildren: () =>
-// import('./feature-modules/admin/admin.module').then((m) => m.AdminModule),
-// 
-},
+    {
+        path: 'register',
+        loadChildren: () =>
+            import('./feature-modules/register/register.module').then((m) => m.RegisterModule),
+    },
 ];
 
 @NgModule({
-imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

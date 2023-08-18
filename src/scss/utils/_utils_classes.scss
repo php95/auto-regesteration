@@ -1,0 +1,92 @@
+.quote {
+    background-color: $color-primary-white;
+    height: 25%;
+    border-radius: 2.5rem 1rem 2.5rem 1.5rem;
+    position: absolute;
+    bottom: 4%;
+    left: 10%;
+}
+
+.font-style {
+    font-size: 1vw;
+    color: $color-primary-grey
+}
+
+p {
+    @include font-face('Poppins-Regular');
+    @extend .font-style
+}
+
+.font-bold {
+    @include font-face('Poppins-Medium');
+    font-weight: bold;
+    @extend .font-style
+}
+
+.small {
+    @include font-face('Poppins-Regular');
+    font-size: 0.8vw;
+    color: $color-primary-grey
+}
+
+.color-primary {
+    color: $color-primary-purple;
+}
+
+h1 {
+    @include font-face('Poppins-semiBold');
+    color: $color-primary-grey;
+    font-size: 1.4vw;
+}
+
+
+
+.input-style {
+    border: 1px solid $color-monochrome-red-violet;
+    background-color: $color-white;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+    height: 8vh;
+}
+
+input[type="checkbox"] {
+    border: 1px solid $color-black;
+}
+
+.form-control::placeholder {
+    color: $color-monochrome-semi-violet;
+}
+
+label {
+    @extend p
+}
+
+.form-group {
+    margin-top: 1.5rem;
+}
+
+a{
+    text-decoration-line: none;
+}
+
+.color-blue {
+    color: $color-monochrome-metallic-seaweed
+}
+.btn{
+    padding: 0.9rem;
+}
+.btn-primary{
+    background-color: $color-primary-purple;
+    color: $color-white;
+    border-radius: 0.25rem;
+    @extend p;
+}
+.btn:hover{
+    background-color: $color-primary-purple;
+    border-color: $color-primary-purple;
+    color: $color-white;
+    @extend p;
+}
+.color-white{
+    color: $color-white;  
+}
