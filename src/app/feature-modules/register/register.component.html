@@ -1,5 +1,8 @@
 <ng-container [ngSwitch]="selectedComponent">
     <section *ngSwitchCase="'signup'">
-        <app-signup></app-signup>
+        <app-signup (verifyEvent)="toBusiness()"></app-signup>
+    </section>
+    <section *ngSwitchCase="'createBusiness'">
+        <app-create-business></app-create-business>
     </section>
 </ng-container> 

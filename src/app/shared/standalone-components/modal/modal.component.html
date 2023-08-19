@@ -1,32 +1,15 @@
-<div class='modal-dialog modal-sm'>
 
-    <!--------- START: Overlay container --------->
-    <div (click)='onBlankAreaClicked($event)' class='overlay-container' id='BLANK'>
-        <!--------- START: Overlay Close Icon --------->
-        <!--------- END: Overlay Close Icon --------->
-        <div class="overlay-body {{ styleCls }}">
-            <div class="d-flex justify-content-between container p-0">
-                <div class="w-25">
-                    <p> {{title}}</p>
-                </div>
-                <div (click)='onModalClose()' *ngIf='!hideCloseIcon'
-                    class="overlay-header w-75 justify-content-end" id="vf-modal-close">
-                    <svg class="icon icon-close {{ styleCls }} {{closeIconStyle}}">
-                        <use xlink:href='#icon-close' xmlns:xlink='http://www.w3.org/1999/xlink'></use>
-                    </svg>
-                </div>
-            </div>
-            <ng-content></ng-content>
-        </div>
-    </div>
-    <!--------- END: Overlay container --------->
-</div> 
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<ng-content></ng-content>
+	</div>
+	<div class="modal-footer">
+	</div>
+</ng-template>
 
-<!--------- START: SVG Symbols --------->
-<svg class='d-none'>
-    <symbol id="icon-close" viewBox="0 0 144 144">
-        <title>main_icn_Close</title>
-        <path d="M4 4l136 136M4 140L140 4" data-name="&lt;Pfad&gt;" stroke-linecap="round" stroke-linejoin="round" />
-    </symbol>
-</svg>
-<!--------- END: SVG Symbols --------->
+<hr />
+
+<pre>{{ closeResult }}</pre>

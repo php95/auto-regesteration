@@ -34,5 +34,11 @@ input.ng-invalid.ng-touched :not(.pass) {
 }
 
 input.ng-valid.ng-touched :not(.pass){
+ 
     border: green 2px solid
+}
+
+.otp-input{
+    height: 43px;
+    margin-inline-end: 0.75rem;
 }

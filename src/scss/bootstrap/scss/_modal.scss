@@ -100,7 +100,7 @@
   // counteract the pointer-events: none; in the .modal-dialog
   color: var(--#{$prefix}modal-color);
   pointer-events: auto;
-  background-color: var(--#{$prefix}modal-bg);
+  background-color: white;
   background-clip: padding-box;
   border: var(--#{$prefix}modal-border-width) solid var(--#{$prefix}modal-border-color);
   @include border-radius(var(--#{$prefix}modal-border-radius));

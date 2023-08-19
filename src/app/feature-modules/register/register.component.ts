@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
 export class RegisterComponent {
 
   selectedComponent = 'signup'
+  toBusiness(){
+    this.selectedComponent = 'createBusiness'
+  }
 
 }

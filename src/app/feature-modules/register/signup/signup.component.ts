@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-signup',
@@ -8,8 +9,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupComponent {
   SignupForm: FormGroup;
-  openModal: boolean = true;
-  constructor() {
+  verifyForm: FormGroup;
+  openModal: boolean = false;
+  @Output() verifyEvent = new EventEmitter()
+  constructor(private modalService: NgbModal) {
     this.SignupForm = new FormGroup({
       firstName: new FormControl(null, [Validators.required]),
       lastName: new FormControl(null, [Validators.required]),
@@ -18,16 +21,27 @@ export class SignupComponent {
       password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
       agreement: new FormControl(null, [Validators.requiredTrue]),
     });
+    this.verifyForm = new FormGroup({
+      firstNum: new FormControl(null, [Validators.required, Validators.maxLength(1), Validators.minLength(1)]),
+      secondNum: new FormControl(null, [Validators.required, Validators.maxLength(1), Validators.minLength(1)]),
+      thirdNum: new FormControl(null, [Validators.required, Validators.maxLength(1), Validators.minLength(1)]),
+      fourthNum: new FormControl(null, [Validators.required, Validators.maxLength(1), Validators.minLength(1)]),
+
+    });
   }
 
   onSubmit() {
     this.openModal = true;
-    console.log(this.openModal);
-    
+  }
+
+  onVerify() {
+    this.verifyEvent.emit();
+    this.modalService.dismissAll();
   }
   get firstName() {
     return this.SignupForm.controls.firstName;
   }
+
   get lastName() {
     return this.SignupForm.controls.lastName;
   }
@@ -43,8 +57,6 @@ export class SignupComponent {
   get agreement() {
     return this.SignupForm.controls.agreement;
   }
-  quitModal(){
-    this.openModal=false;
-  }
+
 }
 
