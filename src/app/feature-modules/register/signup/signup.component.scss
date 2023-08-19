@@ -1,24 +1,38 @@
-.background-img{
+.background-img {
     background-image: url('../../../../assets/images/Group 44@2x.png');
-    height: 100vh; 
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: 96%; 
+    width: 96%;
 }
-.w-30{
+
+.w-30 {
     width: 30%;
 }
-.quote-img{
+
+.quote-img {
     position: absolute;
     bottom: 22%;
     left: 7%;
     z-index: 1;
 }
-.input-border{
+
+.input-border {
     border: 1px solid transparent;
 
 }
-.w-40{
+.color-red{
+    color:red;
+}
+.w-40 {
     width: 40%;
+}
+
+input.ng-invalid.ng-touched :not(.pass) {
+    border: red 1px solid;
+}
+
+input.ng-valid.ng-touched :not(.pass){
+    border: green 2px solid
 }

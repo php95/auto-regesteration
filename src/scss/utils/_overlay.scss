@@ -1,0 +1,128 @@
+// START: Overlay container styles
+.overlay {
+
+    // Overlay Container
+    &-container {
+        width: 100%;
+        // height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        z-index: 99;
+        background: rgba(0, 0, 0, 0.5);
+
+        @include media-breakpoint-down(md) {
+            justify-content: flex-end;
+        }
+
+        /******** START: Custom Scroll bar ********/
+        /* Height */
+        ::-webkit-scrollbar {
+            height: 5px;
+            width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: $color-monochrome-light-grey;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: $color-mid-grey;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: $color-monochrome-aluminium;
+        }
+
+        /******** END: Custom Scroll bar ********/
+        @include media-breakpoint-up(md) {
+            align-items: center;
+        }
+
+        left:0;
+
+        &-bottom {
+            background: $color-dark-semi;
+            height: auto;
+            top: auto;
+            bottom: 0;
+            padding: 1.5rem 0;
+            z-index: 2;
+
+            .overlay-close {
+                top: 1rem;
+                z-index: 1;
+                right: 1rem !important;
+
+
+
+                @include media-breakpoint-up(md) {
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    right: auto !important;
+                    left: 0.5rem !important;
+
+
+                }
+            }
+
+        }
+    }
+
+    // Overlay Body
+    &-body {
+        width: 100%;
+        max-height: 80%;
+        position: relative;
+        background: $white;
+        padding: calc($grid-gutter-width / 2);
+        margin: 0;
+        border-radius: $border-radius $border-radius 0 0;
+        box-shadow: $box-shadow;
+        overflow: auto;
+
+        &-dark {
+            background: $color-dark;
+        }
+
+        @include media-breakpoint-up(md) {
+            max-width: 367px;
+            border-radius: $border-radius;
+        }
+
+        &-radius {
+            border-radius: $border-radius;
+        }
+
+        &-side {
+            top: 0;
+            position: absolute;
+            height: 100%;
+            max-width: 375px !important;
+            max-height: 100%;
+            border-radius: 0;
+            overflow: hidden;
+            right: 0;
+
+        }
+    }
+
+    // Overlay close icon
+    &-close {
+        position: absolute;
+        top: calc($grid-gutter-width / 2);
+        cursor: pointer;
+        right: calc($grid-gutter-width / 2);
+
+    }
+}
+
+
+// END: Overlay container styles

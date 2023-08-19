@@ -46,7 +46,6 @@ h1 {
     background-color: $color-white;
     margin-top: 0.5rem;
     border-radius: 0.25rem;
-    height: 8vh;
 }
 
 input[type="checkbox"] {
@@ -89,4 +88,9 @@ a{
 }
 .color-white{
     color: $color-white;  
+}
+
+.btn:disabled {
+ opacity: 0.5;
+ @extend .btn-primary
 }
